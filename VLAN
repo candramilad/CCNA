@@ -1,0 +1,21 @@
+hostname SWITCH-IDN
+!
+vlan 10
+ name SALES
+ exit
+!
+vlan 20
+ name ENGINEERING
+ exit
+!
+int range fa0/1-2
+ switchport mode access
+ switchport access vlan 10
+ exit
+!
+int range fa0/3-4
+ switchport mode access 
+ switchport access vlan 20
+ end
+!
+write
